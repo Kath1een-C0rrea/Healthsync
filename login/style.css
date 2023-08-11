@@ -1,8 +1,13 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .figura{
     width: 40%;
     float: left;
     background: #073419;
-    padding: 20px 40px;
+    padding: 100px 90px;
     box-sizing: border-box;
     height: 100vh;
     
@@ -50,20 +55,38 @@
     max-width: 300px;
 }
 .formulario input{
-    padding: 8px;
-    border-radius: 5px;
+    width: 400px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
     display: block;
+    margin-bottom: 8px;
     width: 100%;
-    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  
 }
-.formulario .bt-login{
-    background: #D9D9D9;
-    font-weight: 800;
+
+
+
+button {
+    color: green; /* Cor do texto */
     display: inline-block;
-    color: #2D826D;
+    background-color: #ffffff; /* Cor de fundo */
     width: auto;
-    padding: 10px 15px;
-}
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 14px; 
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
+  }
+
+
 .esqueceu{
     text-decoration: none;
     color: #fff;

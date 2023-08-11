@@ -1,26 +1,29 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const form = document.querySelector(".formulario form");
+    const form = document.querySelector("form");
     const emailInput = form.querySelector('input[name="email"]');
     const nomeInput = form.querySelector('input[name="nome"]');
     const senhaInput = form.querySelector('input[name="senha"]');
-
+    const button = form.querySelector("button");
+      
     form.addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        const email = emailInput.value;
-        const nomeUsuario = nomeInput.value;
-        const senha = senhaInput.value;
-
-        if (email.trim() === "" || nomeUsuario.trim() === "" || senha.trim() === "") {
-            alert("Por favor, preencha todos os campos.");
-            return;
-        }
-
-        if (email === "tavaresluanace207@gmail.com" && nomeUsuario === "Luana Tavares" && senha === "2729") {
-            alert("Login bem-sucedido! Redirecionando para o perfil...");
-            window.location.href = "perfil.html";
-        } else {
-            alert("Credenciais inválidas. Tente novamente.");
-        }
+      event.preventDefault();
+    
+     
+      if (!emailInput.value || !nomeInput.value || !senhaInput.value) {
+        alert("Preencha todos os campos");
+        return;
+      }
+    
+      if (
+        emailInput.value === "tavaresluanace207@gmail.com" &&
+        nomeInput.value === "Luana Tavares" &&
+        senhaInput.value === "2729"
+      ) {
+        alert("Bem vindo de volta!");
+        window.location.href = "Gerenciador\calendario.html";
+      } else {
+        alert("Iformações inválidas. Tente novamente.");
+      }
     });
-});
+  });
+  
