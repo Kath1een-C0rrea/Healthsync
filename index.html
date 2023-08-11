@@ -1,29 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css.css">
-    <script src="js/jquery.min.js"></script>
-    <title>Redefinir Senha</title>
-</head>
-<body>
-    <div class="container">
-        <form class="reset-form">
-            <h2>Redefinir Senha</h2>
+<html lang='pt-BR'>
+  <head>
+    <meta charset='utf-8' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+    <script>
 
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.render();
+      });
 
-<p>Informe o e-mail para o qual deseja redefinir sua senha. As devidas instruções serão encaminhadas:</p>
-
-
-
-
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
-            <button type="submit">Enviar</button>
-
-            <img src="logoprojeto.png">
-        </form>
-    </div>
-</body>
+    </script>
+  </head>
+  <body>
+    <div id='calendar'></div>
+  </body>
 </html>
