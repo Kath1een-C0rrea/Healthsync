@@ -8,14 +8,102 @@
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth'
+          initialView: 'dayGridMonth',
+          events: [ // Array de eventos
+            {
+              title: 'esterilização de seringas',
+              start: '2023-08-14', // Data de início da tarefa (formato: YYYY-MM-DD)
+              end: '2023-08-17',   // Data de término da tarefa (formato: YYYY-MM-DD)
+              color: 'green'  ,      // Cor do evento no calendário
+              
+            },
+            {
+              title: 'descarga de oxigenio ',
+              start: '2023-08-18', // Data de início da tarefa (formato: YYYY-MM-DD)
+              end: '2023-08-19',   // Data de término da tarefa (formato: YYYY-MM-DD)
+              color: 'yellow'  ,      // Cor do evento no calendário
+            },
+            {
+              title: ' treinamento ',
+              start: '2023-08-17', // Data de início da tarefa (formato: YYYY-MM-DD)
+              end: '2023-08-17',   // Data de término da tarefa (formato: YYYY-MM-DD)
+              color: 'blue'  ,      // Cor do evento no calendário
+            },
+            {
+              title: 'manutenção nos bebedouros ',
+              start: '2023-08-30', // Data de início da tarefa (formato: YYYY-MM-DD)
+              end: '2023-08-31',   // Data de término da tarefa (formato: YYYY-MM-DD)
+              color: 'orange'  ,      // Cor do evento no calendário
+            },
+            {
+              title: 'palestra',
+              start: '2023-08-12', // Data de início da tarefa (formato: YYYY-MM-DD)
+              end: '2023-08-12',   // Data de término da tarefa (formato: YYYY-MM-DD)
+              color: 'gray'  ,      // Cor do evento no calendário
+            },
+            {
+              title: 'palestra',
+              start: '2023-08-08', // Data de início da tarefa (formato: YYYY-MM-DD)
+              end: '2023-08-08',   // Data de término da tarefa (formato: YYYY-MM-DD)
+              color: 'gray'  ,      // Cor do evento no calendário
+            },
+            {
+              title: ' descarga de Mercadoria',
+              start: '2023-08-10', // Data de início da tarefa (formato: YYYY-MM-DD)
+              end: '2023-08-10',   // Data de término da tarefa (formato: YYYY-MM-DD)
+              color: 'yellow'  ,      // Cor do evento no calendário
+              eventDetails:'Entrega de novos respiradores'
+            },
+            {
+              title: 'manutenção nas ambulancias',
+              start: '2023-08-22', // Data de início da tarefa (formato: YYYY-MM-DD)
+              end: '2023-08-25',   // Data de término da tarefa (formato: YYYY-MM-DD)
+              color: 'orange'  ,      // Cor do evento no calendário
+            },
+            {
+              title: 'chegada dos novos funcionarios',
+              start: '2023-08-25',
+              end: '23-08-25',
+              color: 'pink',
+            },
+            {
+              title: 'treinamento',
+              start: '2023-08-26', // Data de início da tarefa (formato: YYYY-MM-DD)
+              end: '2023-08-26',   // Data de término da tarefa (formato: YYYY-MM-DD)
+              color: 'blue'  ,      // Cor do evento no calendário
+            },
+            {
+              title: 'palestra',
+              start: '2023-08-27', // Data de início da tarefa (formato: YYYY-MM-DD)
+              end: '2023-08-27',   // Data de término da tarefa (formato: YYYY-MM-DD)
+              color: 'gray'  ,      // Cor do evento no calendário
+              
+            }
+          ],
         });
         calendar.render();
       });
-
     </script>
+
   </head>
   <body>
-    <div id='calendar'></div>
+    <div id='app'>
+      <div id='sidebar'>
+        <!-- Conteúdo da barra lateral (criação de tarefa) -->
+        <h2>Criar Tarefa</h2>
+        <label for="taskTitle">Título da Tarefa:</label>
+        <input type="text"  id="eventTitle">
+        <input type="date"  id="eventstart">
+        <input type="date"  id="eventEnd">
+        <input type="radio" name="color" value="blue" checked> Azul
+        <input type="radio" name="color" value="green"> Verde
+        <input type="radio" name="color" value="red"> Vermelho
+        <input type="radio" name="color" value="yellow"> Amarelo
+        <button id="addTaskButton">Adicionar Tarefa</button>
+      </div>
+      <div id='calendar-container'>
+        <div id='calendar'></div>
+      </div>
+    </div>
   </body>
-</html>
+  </html>

@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #2B4A40;
+    
+}
+
+  #event-details {
+    position: absolute;
+    z-index: 1000;
+    background-color: white;
+    border: 1px solid gray;
+    padding: 10px;}
+
+    #app {
+        display: flex;
+      }
+  
+      #sidebar {
+        width: 250px;
+        background-color: #f1f1f1;
+        padding: 20px;
+        box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.2);
+      }
+  
+      #calendar-container {
+        flex-grow: 1;
+      }
+  
+      /* Estilos para o calendário */
+      #calendar {
+        margin: 20px;}
