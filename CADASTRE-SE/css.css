@@ -1,6 +1,6 @@
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
     display: flex;
@@ -8,15 +8,14 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #2B4A40;
-    
 }
 
 .container {
-    background-color: #fff;
+    background-color: #fff; 
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
     padding: 20px;
-    width: 300px;
+    width: 300px; 
 }
 
 .reset-form {
@@ -26,7 +25,7 @@ body {
 
 label {
     margin-bottom: 5px;
-    color: rgb(44, 44, 44);
+    color: rgb(44, 44, 44); 
 }
 
 input {
@@ -35,33 +34,40 @@ input {
     border: none;
     border-bottom: 1px solid #000000; 
     background-color: transparent; 
-    color: #2B4A40; 
-    outline-color: #2fa978; 
+    color: #2B4A40;
+    outline-color: #2fa978;
 }
 
 button {
-    background-color: #2B4A40;
+    background-color: #2B4A40; 
     border: none;
     border-radius: 3px;
     color: white;
     padding: 10px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s; 
 }
 
 button:hover {
     background-color: #3a5e52;
 }
 
-
 h2 {
-    text-align: center; 
+    text-align: center;
     margin-bottom: 20px;
-    color: #2B4A40; 
+    color: #2B4A40;
 }
 
-p{
+p {
     text-align: center;
     color: #000000;
     transition: color 0.3s;
 }
+
+@media (max-width: 320px) {
+    .container {
+        width: 200px;
+    }
+}
+
+@media (width: 918px) and (height: 667px) {}
