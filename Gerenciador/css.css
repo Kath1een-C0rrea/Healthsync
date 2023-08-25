@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #2B4A40;
+    background-color: #BFD9C9;
     
 }
 
@@ -23,16 +23,83 @@ body {
       }
   
       #sidebar {
-        width: 250px;
-        background-color: #f1f1f1;
-        padding: 20px;
+        width: 30%;
+        height: min-content 100%;
         box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.2);
+
       }
+
+      .logo{
+        width: 55%;
+      }
+
+      .moreopitions{
+        width: 8%;
+        left: 10%;
+        top: 1%;
+      }
+    
+      #logo {
+        margin-left: 15%;
+        display: flex; /* Use flexbox to align the images horizontally */
+        align-items: center; /* Vertically center align the images */
+    }
+    
+    .fc-toolbar-chunk {
+      background-color: #7EB89C;
+      display: flex; /* Use flexbox */
+      left: 30%;
+  }
+    
   
       #calendar-container {
         flex-grow: 1;
       }
-  
+
+      .criartarefa{
+        position: relative;
+        top: 10%;
+      }
+    
+    .criartarefa h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    
+    .criartarefa label {
+        margin-bottom: 5px;
+    }
+    
+    .criartarefa input[type="text"],
+    .criartarefa input[type="date"] {
+        width: 90%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    .criartarefa input[type="radio"] {
+        margin-right: 5px;
+    }
+    
+    .criartarefa button {
+    background-color: #007;
+    color: white;
+    border: #000;
+    border-radius: 5px;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    top: 10%;
+}
+
+.criartarefa button:hover {
+    background-color: #0056b3;
+
+}
       /* Estilos para o calendário */
       #calendar {
-        margin: 20px;}
+        margin: 20px;
+      }

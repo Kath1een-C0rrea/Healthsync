@@ -3,6 +3,7 @@
   <head>
     <meta charset='utf-8' />
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+    <link rel="stylesheet" href="css.css">
     <script>
 
       document.addEventListener('DOMContentLoaded', function() {
@@ -32,7 +33,7 @@
             {
               title: 'manutenção nos bebedouros ',
               start: '2023-08-30', // Data de início da tarefa (formato: YYYY-MM-DD)
-              end: '2023-08-31',   // Data de término da tarefa (formato: YYYY-MM-DD)
+              end: '2023-08-32',   // Data de término da tarefa (formato: YYYY-MM-DD)
               color: 'orange'  ,      // Cor do evento no calendário
             },
             {
@@ -63,7 +64,7 @@
             {
               title: 'chegada dos novos funcionarios',
               start: '2023-08-25',
-              end: '23-08-25',
+              end: '2023-08-25',
               color: 'pink',
             },
             {
@@ -89,18 +90,28 @@
   <body>
     <div id='app'>
       <div id='sidebar'>
-        <!-- Conteúdo da barra lateral (criação de tarefa) -->
-        <h2>Criar Tarefa</h2>
-        <label for="taskTitle">Título da Tarefa:</label>
-        <input type="text"  id="eventTitle">
-        <input type="date"  id="eventstart">
-        <input type="date"  id="eventEnd">
-        <input type="radio" name="color" value="blue" checked> Azul
-        <input type="radio" name="color" value="green"> Verde
-        <input type="radio" name="color" value="red"> Vermelho
-        <input type="radio" name="color" value="yellow"> Amarelo
-        <button id="addTaskButton">Adicionar Tarefa</button>
+        <div id="logo">
+          <img src="imagens/pngegg.png" class="moreopitions" onclick="moreopitions()">
+          <img class="logo" src="imagens/HealthSync-removebg-preview.png" alt="logo">
       </div>
+        <!-- Conteúdo da barra lateral (criação de tarefa) -->
+        <div class="criartarefa">
+          <h2>Criar Tarefa</h2>
+          <label for="taskTitle">Título da Tarefa:</label>
+          <input type="text"  id="eventTitle">
+          <input type="date"  id="eventstart">
+          <input type="date"  id="eventEnd">
+          <input type="radio" name="color" value="blue" checked> Azul
+          <input type="radio" name="color" value="green"> Verde
+          <input type="radio" name="color" value="red"> Vermelho
+          <input type="radio" name="color" value="yellow"> Amarelo
+          <div class="button">
+            <br>
+            <button id="addTaskButton">Adicionar Tarefa</button>
+          </div>
+        </div>  
+      </div>
+      
       <div id='calendar-container'>
         <div id='calendar'></div>
       </div>
