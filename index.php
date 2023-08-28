@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HealthSync</title>
     <link rel="stylesheet" href="style.css">
-    <script src="meu2.js"></script>
 </head>
 <body>
     <section class="figura">
@@ -18,17 +17,18 @@
         <h2>Faça login em sua conta</h2>
         <p>Acesse sua conta informando seu <br> e-mail e senha</p>
         <ul class="menu-form">
-            <li><a href="C:\Users\Aluno\Healthsync-2\login.html">Login</a></li>
-            <li><a href="C:\Users\Aluno\Healthsync-2\CADASTRE-SE\cadastro.html">Cadastro</a></li>
+            <li><a href="index.php">Login</a></li>
+            <li><a href="CADASTRE-SE\cadastro.php">Cadastro</a></li>
             
         </ul>
-        <form>
+        <form action="login.php" method="post">
             <input type="email" name="email" placeholder="E-mail">
-            <input type="text" name="nome" placeholder="Usuário">
             <input type="password" name="senha" placeholder="Senha">
-            <button>Enviar</button>
+            <button type="submit">Enviar</button>
+                <a class="esqueceu" href="REDEFINIR SENHA\index.php">Esqueceu a senha?</a>
+</form>
 
-            <a class="esqueceu" href="C:\Users\Aluno\Healthsync-2\REDEFINIR SENHA\index.html">Esqueceu a senha?</a>
+        
 
             
         </form>
