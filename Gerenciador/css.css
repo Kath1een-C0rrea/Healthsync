@@ -40,6 +40,7 @@ body {
       }
     
       #logo {
+        margin-top: 5%;
         margin-left: 15%;
         display: flex; /* Use flexbox to align the images horizontally */
         align-items: center; /* Vertically center align the images */
@@ -103,3 +104,19 @@ body {
       #calendar {
         margin: 20px;
       }
+
+    /* Estilos para o botão de logout */
+    #logoutButton {
+        background-color: #ff0000; /* Cor de fundo vermelha */
+        color: #ffffff; /* Cor do texto branca */
+        border: none; /* Remover a borda */
+        padding: 10px 20px; /* Espaçamento interno */
+        cursor: pointer; /* Mostrar o cursor como uma mão ao passar por cima */
+        font-size: 16px; /* Tamanho da fonte */
+        border-radius: 5px; /* Arredondar as bordas */
+    }
+
+    /* Estilos para hover (quando o cursor passa por cima) */
+    #logoutButton:hover {
+        background-color: #cc0000; /* Cor de fundo vermelha mais escura */
+    }

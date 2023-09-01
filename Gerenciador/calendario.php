@@ -1,3 +1,14 @@
+<?php 
+
+  session_start();
+
+if ($_SESSION['autenticado'] !== true) {
+  echo "Acesso não autorizado. Faça login primeiro.";
+  // Você pode redirecionar o usuário para a página de login ou fazer outra coisa, dependendo dos requisitos do seu sistema.
+  exit;}
+
+?>
+
 <!DOCTYPE html>
 <html lang='pt-BR'>
   <head>
@@ -91,7 +102,9 @@
     <div id='app'>
       <div id='sidebar'>
         <div id="logo">
-          <img src="imagens/pngegg.png" class="moreopitions" onclick="moreopitions()">
+        <form action="logout.php" method="post">
+            <button type="submit" id="logoutButton">Logout</button>
+        </form>
           <img class="logo" src="imagens/HealthSync-removebg-preview.png" alt="logo">
       </div>
         <!-- Conteúdo da barra lateral (criação de tarefa) -->
