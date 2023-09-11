@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="figura">
+    <div class="pai">
+    <div class="figura">
         <div class="logo">
-            <img src="Descrição.png" alt="Logo e descrição da marca" height="524px">
+            <img src="Descrição.png" alt="Logo e descrição da marca" class="imagem">
         </div>
-    </section>
+    </div>
     <section class="formulario">
         <div class="container-form">
         <h2>Faça login em sua conta</h2>
@@ -34,5 +35,6 @@
         </form>
         </div>
     </section>
+    </div>
 </body>
 </html>

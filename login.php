@@ -20,5 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Verificar se o usuário está autenticado antes de permitir o acesso à página "calendario.php"
 if ($_SESSION['autenticado'] !== true) {
     echo "Acesso não autorizado. Faça login primeiro.";
+    header("location:index.php");
 }
 ?>

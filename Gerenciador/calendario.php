@@ -22,6 +22,7 @@ if ($_SESSION['autenticado'] !== true) {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
           initialView: 'dayGridMonth',
+          locale: 'PT-BR',
           events: [ // Array de eventos
             {
               title: 'esterilização de seringas',
@@ -92,7 +93,7 @@ if ($_SESSION['autenticado'] !== true) {
               color: 'gray'  ,      // Cor do evento no calendário
               
             }
-          ],
+          ], 
         });
         calendar.render();
       });

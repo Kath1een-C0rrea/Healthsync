@@ -4,19 +4,15 @@ body {
     padding: 0;
 }
 
-.figura{
-    width: 40%;
-    float: left;
-    background: #073419;
-    padding: 100px 90px;
-    box-sizing: border-box;
-    height: 100vh;
-    
+
+.pai{
+    display: flex;
+    width: 100%;
 }
-.formulario{
+
+.formulario {
     width: 60%;
-    float: right;
-    background:#2B4A40;
+    background: #2B4A40;
     padding: 40px;
     box-sizing: border-box;
     height: 100vh;
@@ -68,6 +64,12 @@ body {
   
 }
 
+.imagem{
+        width: 50vw;
+        height: 100vh;
+     
+}
+
 
 
 button {
@@ -101,4 +103,23 @@ button {
 
 }
 
+@media (max-width: 730px) {
 
+    .formulario{
+        width: 100vw;
+        float: right;
+        background:#2B4A40;
+        padding: 40px;
+        height: 100vh;
+    }
+
+    .imagem{
+        content: url('Descrição2.png');
+        position: absolute;
+        top: 70%;
+        width: 100vw;
+        height: 30vh;
+     
+}
+
+}
