@@ -7,6 +7,7 @@ if ($_SESSION['autenticado'] !== true) {
   // Você pode redirecionar o usuário para a página de login ou fazer outra coisa, dependendo dos requisitos do seu sistema.
   exit;}
 
+
 ?>
 
 <!DOCTYPE html>
@@ -109,18 +110,20 @@ if ($_SESSION['autenticado'] !== true) {
       </div>
         <!-- Conteúdo da barra lateral (criação de tarefa) -->
         <div class="criartarefa">
+    <form action="conexao.php" method="post"></form>
           <h2>Criar Tarefa</h2>
-          <label for="taskTitle">Título da Tarefa:</label>
-          <input type="text"  id="eventTitle">
-          <input type="date"  id="eventstart">
-          <input type="date"  id="eventEnd">
-          <input type="radio" name="color" value="blue" checked> Azul
-          <input type="radio" name="color" value="green"> Verde
-          <input type="radio" name="color" value="red"> Vermelho
-          <input type="radio" name="color" value="yellow"> Amarelo
+            <label for="taskTitle">Título da Tarefa:</label>
+            <input type="text"  id="eventTitle" name="nometarefa">
+          <input type="date"  id="eventstart" name="datainicio">
+          <input type="date"  id="eventEnd" name="datafim">
+          <input type="radio" name="blue" value="blue" checked> Azul
+          <input type="radio" name="green" value="green"> Verde
+          <input type="radio" name="red" value="red"> Vermelho
+          <input type="radio" name="yellow" value="yellow"> Amarelo
           <div class="button">
             <br>
-            <button id="addTaskButton">Adicionar Tarefa</button>
+            <button type="submit">Adicionar Tarefa</button>
+    </form>
           </div>
         </div>  
       </div>
