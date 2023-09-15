@@ -124,6 +124,7 @@ if ($_SESSION['autenticado'] !== true) {
           <div class="button">
             <br>
             <button type="submit">Adicionar Tarefa</button>
+            <br>
     </form>
           </div>
         </div>  
