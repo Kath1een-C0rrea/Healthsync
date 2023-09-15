@@ -6,6 +6,7 @@ if ($_SESSION['autenticado'] !== true) {
   echo "Acesso não autorizado. Faça login primeiro.";
   // Você pode redirecionar o usuário para a página de login ou fazer outra coisa, dependendo dos requisitos do seu sistema.
   exit;}
+  
 
 
 ?>
@@ -106,25 +107,37 @@ if ($_SESSION['autenticado'] !== true) {
         <div id="logo">
         <form action="logout.php" method="post">
             <button type="submit" id="logoutButton">Logout</button>
+
         </form>
           <img class="logo" src="imagens/HealthSync-removebg-preview.png" alt="logo">
       </div>
         <!-- Conteúdo da barra lateral (criação de tarefa) -->
         <div class="criartarefa">
-    <form action="conexao.php" method="post"></form>
+    <form action="conexao.php" method="post">
           <h2>Criar Tarefa</h2>
             <label for="taskTitle">Título da Tarefa:</label>
+
             <input type="text"  id="eventTitle" name="nometarefa">
+
           <input type="date"  id="eventstart" name="datainicio">
+
           <input type="date"  id="eventEnd" name="datafim">
-          <input type="radio" name="blue" value="blue" checked> Azul
-          <input type="radio" name="green" value="green"> Verde
-          <input type="radio" name="red" value="red"> Vermelho
-          <input type="radio" name="yellow" value="yellow"> Amarelo
+
+          <select name="selectcor">
+            <option value="azul" selected>Azul</option>
+            <option value="verde">Verde</option>
+            <option value="amarelo">Amarelo</option>
+            <option value="vermelho">Vermelho</option>
+          </select>
+
           <div class="button">
             <br>
+<<<<<<< HEAD
             <button type="submit">Adicionar Tarefa</button>
             <br>
+=======
+            <input type="submit" value="Adicionar Tarefa">
+>>>>>>> f56471bc599dd59d7d8b3d9edc23ac3b8a874e74
     </form>
           </div>
         </div>  

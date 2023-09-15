@@ -1,29 +1,3 @@
-<?php
-        //Conecta ao banco de dados (host, usuario, senha,nome do banco de dados)
-    $conn = new mysqli ("localhost","root","","bancolegal");
-        // verifica se a conexão foi bem-sucedida
-    if ($conn->connect_error) {
-        die ("Erro de conexão". $conn->connect_error);
-    }
-    
-    if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        $nome = $_POST ["nome"];
-        $email = $_POST ["email"];
-        $senha = $_POST["senha"];
-        $cpf = $_POST ["cpf"];
-
-        $sql = "INSERT INTO usuario (nome, email, senha, cpf) VALUES (?,?,?,?)";
-        $stmt = $conn ->prepare($sql);
-        $stmt -> bind_param ("sssi", $nome, $email, $senha, $cpf);
-        $stmt ->execute;
-        header ("location = exit");
-        $conn -> close;
-    }
-
-    
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +9,7 @@
 <body>
       
                 <div class="container">
-                    <form class="reset-form" method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
+                    <form class="reset-form" method="POST" action="cadastrar.php">
                         <img src="logoprojeto.png">
             
                         <label for="nome-completo"></label>
