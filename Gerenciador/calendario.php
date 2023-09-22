@@ -1,4 +1,11 @@
 <?php 
+$conn = new mysqli("localhost", "root", "", "bd_healthsync");
+
+if ($conn->connect_error) {
+
+  die("Falha na conexão: " . $conn->connect_error);
+};
+
 
   session_start();
 
@@ -113,7 +120,7 @@ if ($_SESSION['autenticado'] !== true) {
       </div>
         <!-- Conteúdo da barra lateral (criação de tarefa) -->
         <div class="criartarefa">
-    <form action="conexao.php" method="post">
+    <form action="inserir.php" method="post">
           <h2>Criar Tarefa</h2>
             <label for="taskTitle">Título da Tarefa:</label>
 
@@ -132,12 +139,8 @@ if ($_SESSION['autenticado'] !== true) {
 
           <div class="button">
             <br>
-<<<<<<< HEAD
             <button type="submit">Adicionar Tarefa</button>
             <br>
-=======
-            <input type="submit" value="Adicionar Tarefa">
->>>>>>> f56471bc599dd59d7d8b3d9edc23ac3b8a874e74
     </form>
           </div>
         </div>  

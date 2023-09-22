@@ -1,3 +1,12 @@
+<?php 
+$conn = new mysqli("localhost", "root", "", "bd_healthsync");
+
+if ($conn->connect_error) {
+
+  die("Falha na conexão: " . $conn->connect_error);
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +27,7 @@
                         <label for="email"></label>
                         <input type="email" id="email" name="email" placeholder="Insira o E-mail:" required>
             
-                        <label for="cpf"></label>
-                        <input type="text" id="cpf" name="cpf" placeholder="Insira o CPF:" required>
+
             
                         <label for="senha"></label>
 
@@ -45,7 +53,7 @@ checkbox.addEventListener('change', function() {
 
 
 
-                <button type="submit">Cadastre-se</button>
+                <input type="submit" value="cadastre-se">
     
               
             </form>
