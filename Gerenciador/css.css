@@ -25,7 +25,7 @@ body {
       #sidebar {
         width: 30%;
         height: min-content 100%;
-        box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.2);
+        
 
       }
 
@@ -58,8 +58,15 @@ body {
       }
 
       .criartarefa{
+        text-align: center;
         position: relative;
         top: 10%;
+        right: 10%;
+        background-color: rgb(97, 86, 106);
+        border-radius: 10px;
+        padding: 1px 0px;
+        border: 2px solid #ffffff;
+        filter: invert(100%);
       }
     
     .criartarefa h2 {
@@ -78,6 +85,8 @@ body {
         margin-bottom: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
+        background-color: #000;
+        color: #fff;
     }
     
     .criartarefa input[type="radio"] {
@@ -85,13 +94,13 @@ body {
     }
     
     .criartarefa button {
-    background-color: #007;
-    color: white;
+    background-color:rgb(255, 255, 136);
+    color: black;
     border: #000;
     border-radius: 5px;
-    padding: 15px 20px;
+    padding: 10px 15px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: 0.3s ease;
     position: relative;
     top: 10%;
 }

@@ -9,7 +9,7 @@
 <body>
       
                 <div class="container">
-                    <form class="reset-form" method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
+                    <form class="reset-form" method="POST" action="cadastrar.php">
                         <img src="logoprojeto.png">
             
                         <label for="nome-completo"></label>
