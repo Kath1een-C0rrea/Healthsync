@@ -1,29 +1,3 @@
-<?php
-        //Conecta ao banco de dados (host, usuario, senha,nome do banco de dados)
-    $conn = new mysqli ("localhost","root","","bancolegal");
-        // verifica se a conexão foi bem-sucedida
-    if ($conn->connect_error) {
-        die ("Erro de conexão". $conn->connect_error);
-    }
-    
-    if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        $nome = $_POST ["nome"];
-        $email = $_POST ["email"];
-        $senha = $_POST["senha"];
-        $cpf = $_POST ["cpf"];
-
-        $sql = "INSERT INTO usuario (nome, email, senha, cpf) VALUES (?,?,?,?)";
-        $stmt = $conn ->prepare($sql);
-        $stmt -> bind_param ("sssi", $nome, $email, $senha, $cpf);
-        $stmt ->execute;
-        header ("location = exit");
-        $conn -> close;
-    }
-
-    
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,6 +31,15 @@
                             <input type="checkbox" id="mostrar-senha">
                             <label for="mostrar-senha" class="mostrar-senha-label">Mostrar senha</label>
 
+                            <script>
+                                const checkbox = document.getElementById('mostrar-senha');
+const senhaInput = document.getElementById('senha');
+
+checkbox.addEventListener('change', function() {
+  senhaInput.type = this.checked ? 'text' : 'password';
+});
+
+                                </script>
 
                         </div>
 
