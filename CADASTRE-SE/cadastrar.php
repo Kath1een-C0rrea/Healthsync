@@ -1,10 +1,5 @@
 <?php
-        //Conecta ao banco de dados (host, usuario, senha,nome do banco de dados)
-    $conn = new mysqli ("localhost","root","","bd_healthsync");
-        // verifica se a conexão foi bem-sucedida
-    if ($conn->connect_error) {
-        die ("Erro de conexão". $conn->connect_error);
-    }
+        include "conexao.php";
     
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $nome = $_POST ["nome"];

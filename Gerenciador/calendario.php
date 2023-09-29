@@ -1,10 +1,6 @@
 <?php 
-$conn = new mysqli("localhost", "root", "", "bd_healthsync");
-
-if ($conn->connect_error) {
-
-  die("Falha na conexão: " . $conn->connect_error);
-};
+include "conexao.php";
+;
 
 
   session_start();
