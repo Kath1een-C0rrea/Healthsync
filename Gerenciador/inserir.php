@@ -1,6 +1,6 @@
 <?php
   
-  include "conexao.php";;
+  include "conexao.php";
 
     session_start();
 
@@ -11,9 +11,10 @@
     $datainicio = $_POST['datainicio'];
     $datafinal = $_POST['datafim'];
     $selectcor = $_POST['selectcor'];
+    $tarefadescricao = $_POST['descricao'];
 
-    $stmt = $conn->prepare("INSERT INTO tarefas (nometarefa, datainicio, datafim, selectcor) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $nometarefa, $datainicio, $datafinal, $selectcor);
+    $stmt = $conn->prepare("INSERT INTO tarefas (title, start, end, color, descricao_tarefa) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssss", $nometarefa, $datainicio, $datafinal, $selectcor, $tarefadescricao);
 
 if ($stmt->execute()) {
     echo "Dados inseridos com sucesso!";

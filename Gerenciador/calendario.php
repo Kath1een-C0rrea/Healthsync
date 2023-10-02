@@ -1,17 +1,43 @@
-<?php 
-include "conexao.php";
-;
+<?php
+$conn = new mysqli("localhost", "root", "", "db_healthsync");
 
+// Verifica se a conexão foi bem-sucedida
+if ($conn->connect_error) {
+    die("Erro de conexão: " . $conn->connect_error);
+}
 
-  session_start();
+session_start();
 
 if ($_SESSION['autenticado'] !== true) {
-  echo "Acesso não autorizado. Faça login primeiro.";
-  // Você pode redirecionar o usuário para a página de login ou fazer outra coisa, dependendo dos requisitos do seu sistema.
-  exit;}
-  
+    echo "Acesso não autorizado. Faça login primeiro.";
+    // Você pode redirecionar o usuário para a página de login ou fazer outra coisa, dependendo dos requisitos do seu sistema.
+    exit;
+}
 
+// Consulta SQL para selecionar todas as colunas da tabela 'tarefas'
+$sql = "SELECT * FROM tarefas";
 
+// Executa a consulta SQL
+$result = $conn->query($sql);
+
+// Verifica se a consulta foi executada com sucesso
+if ($result) {
+    // Inicializa um array para armazenar os resultados
+    $resultArray = array();
+
+    // Obtém os resultados e adiciona-os ao array
+    while ($row = $result->fetch_assoc()) {
+        $resultArray[] = $row;
+    }
+
+    // Converte o array para JSON para que possa ser usado no JavaScript
+    $resultJSON = json_encode($resultArray);
+} else {
+    echo "Erro na consulta: " . $conn->error;
+}
+
+// Fecha a conexão com o banco de dados
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -22,85 +48,19 @@ if ($_SESSION['autenticado'] !== true) {
     <link rel="stylesheet" href="css.css">
     <script>
 
-      document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth',
-          locale: 'PT-BR',
-          events: [ // Array de eventos
-            {
-              title: 'esterilização de seringas',
-              start: '2023-08-14', // Data de início da tarefa (formato: YYYY-MM-DD)
-              end: '2023-08-17',   // Data de término da tarefa (formato: YYYY-MM-DD)
-              color: 'green'  ,      // Cor do evento no calendário
-              
-            },
-            {
-              title: 'descarga de oxigenio ',
-              start: '2023-08-18', // Data de início da tarefa (formato: YYYY-MM-DD)
-              end: '2023-08-19',   // Data de término da tarefa (formato: YYYY-MM-DD)
-              color: 'yellow'  ,      // Cor do evento no calendário
-            },
-            {
-              title: ' treinamento ',
-              start: '2023-08-17', // Data de início da tarefa (formato: YYYY-MM-DD)
-              end: '2023-08-17',   // Data de término da tarefa (formato: YYYY-MM-DD)
-              color: 'blue'  ,      // Cor do evento no calendário
-            },
-            {
-              title: 'manutenção nos bebedouros ',
-              start: '2023-08-30', // Data de início da tarefa (formato: YYYY-MM-DD)
-              end: '2023-08-32',   // Data de término da tarefa (formato: YYYY-MM-DD)
-              color: 'orange'  ,      // Cor do evento no calendário
-            },
-            {
-              title: 'palestra',
-              start: '2023-08-12', // Data de início da tarefa (formato: YYYY-MM-DD)
-              end: '2023-08-12',   // Data de término da tarefa (formato: YYYY-MM-DD)
-              color: 'gray'  ,      // Cor do evento no calendário
-            },
-            {
-              title: 'palestra',
-              start: '2023-08-08', // Data de início da tarefa (formato: YYYY-MM-DD)
-              end: '2023-08-08',   // Data de término da tarefa (formato: YYYY-MM-DD)
-              color: 'gray'  ,      // Cor do evento no calendário
-            },
-            {
-              title: ' descarga de Mercadoria',
-              start: '2023-08-10', // Data de início da tarefa (formato: YYYY-MM-DD)
-              end: '2023-08-10',   // Data de término da tarefa (formato: YYYY-MM-DD)
-              color: 'yellow'  ,      // Cor do evento no calendário
-              eventDetails:'Entrega de novos respiradores'
-            },
-            {
-              title: 'manutenção nas ambulancias',
-              start: '2023-08-22', // Data de início da tarefa (formato: YYYY-MM-DD)
-              end: '2023-08-25',   // Data de término da tarefa (formato: YYYY-MM-DD)
-              color: 'orange'  ,      // Cor do evento no calendário
-            },
-            {
-              title: 'chegada dos novos funcionarios',
-              start: '2023-08-25',
-              end: '2023-08-25',
-              color: 'pink',
-            },
-            {
-              title: 'treinamento',
-              start: '2023-08-26', // Data de início da tarefa (formato: YYYY-MM-DD)
-              end: '2023-08-26',   // Data de término da tarefa (formato: YYYY-MM-DD)
-              color: 'blue'  ,      // Cor do evento no calendário
-            },
-            {
-              title: 'palestra',
-              start: '2023-08-27', // Data de início da tarefa (formato: YYYY-MM-DD)
-              end: '2023-08-27',   // Data de término da tarefa (formato: YYYY-MM-DD)
-              color: 'gray'  ,      // Cor do evento no calendário
-              
-            }
-          ], 
+            initialView: 'dayGridMonth',
+            events: <?php echo $resultJSON; ?>, // Carrega os eventos do JSON gerado no PHP
+            color: 'color', // Define a cor do evento com base na coluna 'cor_tarefa'
+            eventDisplay: 'block', // Exibe os eventos como blocos no calendário
+            eventBackgroundColor: 'color', // Define a cor de fundo do evento com base na coluna 'cor_tarefa'
+            eventBorderColor: 'color' // Define a cor da borda do evento com base na coluna 'cor_tarefa'
         });
         calendar.render();
-      });
+    });
+
     </script>
 
   </head>
@@ -127,11 +87,13 @@ if ($_SESSION['autenticado'] !== true) {
           <input type="date"  id="eventEnd" name="datafim">
 
           <select name="selectcor">
-            <option value="azul" selected>Azul</option>
-            <option value="verde">Verde</option>
-            <option value="amarelo">Amarelo</option>
-            <option value="vermelho">Vermelho</option>
-          </select>
+            <option value="blue" selected>azul</option>
+            <option value="green">verde</option>
+            <option value="yellow">amarelo</option>
+            <option value="red">vermelho</option>
+          </select> <br> <br>
+
+          <input type="text"  id="eventTitle" name="descricao" placeholder="descrição">
 
           <div class="button">
             <br>
