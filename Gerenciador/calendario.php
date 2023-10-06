@@ -27,6 +27,9 @@ if ($result) {
 
     // Obtém os resultados e adiciona-os ao array
     while ($row = $result->fetch_assoc()) {
+        // Formate as datas de início e fim no padrão brasileiro (DD/MM/YYYY)
+
+        
         $resultArray[] = $row;
     }
 
@@ -45,21 +48,34 @@ $conn->close();
   <head>
     <meta charset='utf-8' />
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="css.css">
     <script>
 
-    document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
+document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        locale: 'PT-BR',
+        eventClick: function(info) {
+          Swal.fire(
+            'Tarefa: ' + info.event.title,
+            'Data Início: ' + info.event.start +
+            'Data Fim: ' + info.event.end +
+            'Descrição: ' + info.event.extendedProps.description
+            
+          )
+        },
             events: <?php echo $resultJSON; ?>, // Carrega os eventos do JSON gerado no PHP
-            color: 'color', // Define a cor do evento com base na coluna 'cor_tarefa'
             eventDisplay: 'block', // Exibe os eventos como blocos no calendário
             eventBackgroundColor: 'color', // Define a cor de fundo do evento com base na coluna 'cor_tarefa'
-            eventBorderColor: 'color' // Define a cor da borda do evento com base na coluna 'cor_tarefa'
+            eventBorderColor: 'color', // Define a cor da borda do evento com base na coluna 'cor_tarefa'
+            
         });
         calendar.render();
-    });
+        calendar.setOption('locale', 'pt-br');
+
+    }) ;
 
     </script>
 
@@ -80,13 +96,13 @@ $conn->close();
           <h2>Criar Tarefa</h2>
             <label for="taskTitle">Título da Tarefa:</label>
 
-            <input type="text"  id="eventTitle" name="nometarefa">
+            <input type="text"  id="eventTitle" name="nometarefa" required>
 
-          <input type="date"  id="eventstart" name="datainicio">
+          <input type="datetime-local" id="eventstart" name="datainicio" required>
 
-          <input type="date"  id="eventEnd" name="datafim">
+          <input type="datetime-local"  id="eventEnd" name="datafim" required>
 
-          <select name="selectcor">
+          <select name="selectcor" required>
             <option value="blue" selected>azul</option>
             <option value="green">verde</option>
             <option value="yellow">amarelo</option>

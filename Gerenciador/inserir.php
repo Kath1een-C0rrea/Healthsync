@@ -13,7 +13,7 @@
     $selectcor = $_POST['selectcor'];
     $tarefadescricao = $_POST['descricao'];
 
-    $stmt = $conn->prepare("INSERT INTO tarefas (title, start, end, color, descricao_tarefa) VALUES (?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO tarefas (title, start, end, color, description) VALUES (?, ?, ?, ?, ?)");
     $stmt->bind_param("sssss", $nometarefa, $datainicio, $datafinal, $selectcor, $tarefadescricao);
 
 if ($stmt->execute()) {
