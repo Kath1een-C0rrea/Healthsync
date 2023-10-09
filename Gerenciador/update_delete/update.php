@@ -3,15 +3,15 @@ include "conexao.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $id = $_POST["id"];
-    $title = $_POST["nome"];
-    $start = $_POST["inicio"];
-    $end = $_POST["fim"];
-    $color = $_POST["cor"]; 
-    $descricao = $_POST["descricao"];
+    $title = $_POST["name"];
+    $start = $_POST["start"];
+    $end = $_POST["end"];
+    $color = $_POST["color"]; 
+    $descricao = $_POST["description"];
 }
 
 
-$sql = "UPDATE tarefas SET title = ?, start = ?, end = ?, color = ?, descricao_tarefa = ?  WHERE ID_tarefa = ? ";
+$sql = "UPDATE tarefas SET title = ?, start = ?, end = ?, color = ?, description = ?  WHERE ID_tarefa = ? ";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("sssssi", $title, $start, $end, $color, $descricao, $id); 
 

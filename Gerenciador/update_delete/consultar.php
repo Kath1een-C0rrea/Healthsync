@@ -19,7 +19,7 @@
     echo "<td>".$row['start']."</td>";
     echo "<td>".$row['end']."</td>";
     echo "<td>".$row['color']."</td>";
-    echo "<td>".$row['descricao_tarefa']."</td>";
+    echo "<td>".$row['description']."</td>";
     echo "<td>"."<a href=editar.php?id=". $row["ID_tarefa"]. ">Editar" . "</a>" . "</td>";
     echo "<td>"."<a href=excluir.php?id=".$row["ID_tarefa"]. ">Excluir". "</a>" . "</td>";
     echo "</tr>";
@@ -27,8 +27,14 @@
     echo "</table>";
 
         if ($result->num_rows === 0){
-            echo "nenhum paciente encontrado";
+            echo "Nenhuma tarefa encontrada";
         }
     $conn->close();
     ?>
+<body> 
+
+            <form action="http://localhost/Healthsync/Gerenciador/calendario.php" method="post">
+            <button type="submit" id="logoutButton">Voltar para o calendario</button>
+
+</body>
 </html>

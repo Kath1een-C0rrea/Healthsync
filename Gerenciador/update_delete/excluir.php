@@ -1,25 +1,25 @@
 <?php
-include "conexao.php";
-session_start();
-echo "Conexão bem-sucedida!";
+include "conexao.php"; 
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Recupere o ID do registro que deseja excluir (suponhamos que ele seja passado via POST)
-    $idParaExcluir = $_POST['id_para_excluir'];
+if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+  $id_tarefa = $_GET['id'];
 
-    $stmt = $conn->prepare("DELETE FROM tarefas WHERE id = ?");
-    $stmt->bind_param("i", $idParaExcluir);
+  $sql = "DELETE FROM tarefas WHERE id_tarefa = ?";
+  
+  // Certifique-se de que $conexao está definida corretamente no arquivo conexao.php
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param("i", $id_tarefa);
+  
+  if ($stmt->execute()) {
+    header("Location: consultar.php"); 
+    exit();
+  } else {
+    echo "Erro ao excluir paciente: " . $stmt->error;
+  }
 
-    if ($stmt->execute()) {
-        echo "Tarefa excluído com sucesso!";
-    } else {
-        echo "Erro ao excluir registro: " . $stmt->error;
-    }
-
-    $stmt->close();
+  $stmt->close();
+} else {
+  echo "ID de paciente inválido.";
 }
-
-$conn->close();
-
-header("location: calendario.php");
 ?>
+
