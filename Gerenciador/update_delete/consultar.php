@@ -12,13 +12,14 @@
         $result= $conn->query($sql);
 
     echo "<table>";
-    echo "<tr><th>nome da tarefas</th><th>inicio da tarefa</th><th>fim da tarefa</th><th>urgencia</th><th>Editar</th><th>Excluir</th><th></tr>";
+    echo "<tr><th>nome da tarefas</th><th>inicio da tarefa</th><th>fim da tarefa</th><th>urgencia</th><th>descrição</th><th>Editar</th><th>Excluir</th><th></tr>";
     while ($row = $result->fetch_assoc()) {
     echo "<tr>";
-    echo "<td>". $row['nometarefa']."</td>";
-    echo "<td>".$row['datainicio']."</td>";
-    echo "<td>".$row['datafim']."</td>";
-    echo "<td>".$row['selectcor']."</td>";
+    echo "<td>". $row['title']."</td>";
+    echo "<td>".$row['start']."</td>";
+    echo "<td>".$row['end']."</td>";
+    echo "<td>".$row['color']."</td>";
+    echo "<td>".$row['descricao_tarefa']."</td>";
     echo "<td>"."<a href=editar.php?id=". $row["ID_tarefa"]. ">Editar" . "</a>" . "</td>";
     echo "<td>"."<a href=excluir.php?id=".$row["ID_tarefa"]. ">Excluir". "</a>" . "</td>";
     echo "</tr>";

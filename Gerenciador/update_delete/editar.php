@@ -1,69 +1,82 @@
+
+Conversation opened. 1 unread message.
+
+Skip to content
+Using Gmail with screen readers
+Enable desktop notifications for Gmail.
+   OK  No thanks
+1 of 129
+(no subject)
+Inbox
+
+Igor Daniel
+11:11 AM (1 minute ago)
+to me
+
+   
+Translate message
+Turn off for: Portuguese
 <?php
-include "conexao.php";
 
-if($SERVER['REQUEST_METHOD'] == 'POST'){
-    $funcionario_id= $_POST['funcionario_id'];
-    $nomd= $_POST['funcionario_nome'];
-    $email= $_POST['funcionario_email'];
+    include "conexao.php";
 
-$sql= "UPDATE funcionario SET funcionario_id=?, funcionario_nome=?, funcionario_email=? WHERE funcionario_id=?";
-
-$stmt= $conn->prepare($sql);
-$stmt->bind_param("sss", $funcionario_id, $funcionario_nome, $funcionario_email);
-
-if ($stmt->execute()){
-header("Location: consultar.php");
-exit();
-
-} else {
-    echo "Erro ao atualizar paciente: ".$stmt->error";
-}
-
-$stmt->close();
-}else {
-    $funcionario_id= $_GET['id'];
-    $sql= "SELECT * FROM funcionario WERE funcionario_id=?"
-
-    $stmt= $conexao->prepare($sql);
-    $stmt->bind_param("i", $funcionario_id);
-
-    if($stmt->execute()){
-        
-    $result = $stmt->get_result();
-    
-    if ($result->num_rows == 1) {
-      $row = $result->fetch_assoc();
-    } else {
-      echo "Paciente não encontrado.";
-      exit();
+    if (isset($_GET['id'])){
+        $id = $_GET['id'];
     }
-  } else {
-    echo "Erro na consulta: " . $stmt->error;
-    exit();
-  }
-  $stmt->close();
-}
+
+        $sql = "SELECT * FROM tarefas WHERE ID_tarefa = ?";
+        $stmt = $conn->prepare ($sql);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $resultado =$stmt-> get_result();
+
+        if ($resultado->num_rows == 1){
+            $tarefa = $resultado->fetch_assoc();
+        } else {
+            die("ID da Tarefa não encontrada");
+        } 
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Editar Funcionário</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Edição </title>
 </head>
 <body>
-  <h1>Editar Funcionário</h1>
-  <form action="" method="post">
-    <input type="hidden" name="id_paciente" value="<?php echo $row['funcionario_id']; ?>">
     
-    <label for="nome">ID:</label>
-    <input type="text" id="nome" name="nome" value="<?php echo $row['funcionario_nome']; ?>" required><br>
+<h1>Editar Paciente</h1>
 
-    <label for="cpf">Nome:</label>
-    <input type="text" id="email" name="email" value="<?php echo $row['funcionario_email']; ?>" required><br>
+<form action="update.php" method="post">
+    <input type="hidden" name="id" value="<?php echo $tarefa ['ID_tarefa']; ?>">
+
+    <label for="nome">Descrição da Tarefa</label>
+    <input type="text" name="nome" value="<?php echo $tarefa ['title']; ?>" required>
+
+    <label for="nome">Inicio</label>
+    <input type="text" name="inicio" value="<?php echo $tarefa ['start']; ?>" required>
+
+    <label for="nome">Final</label>
+    <input type="text"  name="fim" value="<?php echo $tarefa ['end']; ?>" required>
+
+    <label for="nome">Descrição</label>
+    <input type="text" name="descricao" value="<?php echo $tarefa ['descricao_tarefa']?>" required>
+    
+    <label for="urgencia">Urgencia:</label>
+            <select name="cor" required>
+                <option value="blue">azul</option>
+                <option value="green">verde</option>
+                <option value="yellow">amarelo</option>
+                <option value="red">vermelho</option>
+
+            </select>
+
+            <button type="submit">Atualizar</button>
+</form>
 
 
-    <input type="submit" value="Atualizar">
-  </form>
-  <a href="consultar.php">Voltar para a Lista de Pacientes</a>
+
+
 </body>
 </html>
