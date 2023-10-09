@@ -119,10 +119,12 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
         </div>  
       </div>
-      
+        
       <div id='calendar-container'>
         <div id='calendar'></div>
       </div>
     </div>
+    <form action="update_delete/consultar.php" method="post">
+            <button type="submit" id="logoutButton">lista de tarefas</button>
   </body>
   </html>
