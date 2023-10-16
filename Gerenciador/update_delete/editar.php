@@ -25,27 +25,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Edição </title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-<h1>Editar Paciente</h1>
 
 <form action="update.php" method="post">
     <input type="hidden" name="id" value="<?php echo $tarefa ['ID_tarefa']; ?>">
 
-    <label for="nome">Descrição da Tarefa</label>
+    <label for="nome">Nome da Tarefa:</label>
     <input type="text" name="name" value="<?php echo $tarefa ['title']; ?>" required>
 
-    <label for="nome">Inicio</label>
+    <label for="nome">Inicio (Data e Horário):</label>
     <input type="text" name="start" value="<?php echo $tarefa ['start']; ?>" required>
 
-    <label for="nome">Final</label>
+    <label for="nome">Fim (Data e Horário):</label>
     <input type="text"  name="end" value="<?php echo $tarefa ['end']; ?>" required>
 
-    <label for="nome">Descrição</label>
+    <label for="nome">Descrição:</label>
     <input type="text" name="description" value="<?php echo $tarefa ['description']?>" required>
     
-    <label for="urgencia">Urgencia:</label>
+    <label for="urgencia">Urgência:</label>
             <select name="color" required>
                 <option value="blue">azul</option>
                 <option value="green">verde</option>

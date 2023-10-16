@@ -125,6 +125,6 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
     <form action="update_delete/consultar.php" method="post">
-            <button type="submit" id="logoutButton">lista de tarefas</button>
+            <button type="submit" id="logoutButton">Lista de tarefas</button>
   </body>
   </html>

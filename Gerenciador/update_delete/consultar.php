@@ -12,7 +12,7 @@
         $result= $conn->query($sql);
 
     echo "<table>";
-    echo "<tr><th>nome da tarefas</th><th>inicio da tarefa</th><th>fim da tarefa</th><th>urgencia</th><th>descrição</th><th>Editar</th><th>Excluir</th><th></tr>";
+    echo "<tr><th>Nome da Tarefa</th><th>Início</th><th>Fim</th><th>Urgência</th><th>Descrição</th><th>Editar</th><th>Excluir</th><th></tr>";
     while ($row = $result->fetch_assoc()) {
     echo "<tr>";
     echo "<td>". $row['title']."</td>";
