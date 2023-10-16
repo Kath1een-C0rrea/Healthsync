@@ -115,16 +115,26 @@ document.addEventListener('DOMContentLoaded', function() {
             <br>
             <button type="submit">Adicionar Tarefa</button>
             <br>
+
     </form>
           </div>
         </div>  
       </div>
+
+      <div id='listar-container'>
+    <form action="update_delete/consultar.php" method="post">
+            <button type="submit" id="listarButton">Lista de Tarefas</button>
+    </div>
         
       <div id='calendar-container'>
         <div id='calendar'></div>
       </div>
     </div>
+<<<<<<< HEAD
     <form action="update_delete/consultar.php" method="post">
             <button type="submit" id="logoutButton">Lista de tarefas</button>
+=======
+    
+>>>>>>> 2836512207a1a12e723f041f6ddc8879e851940e
   </body>
   </html>
