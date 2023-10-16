@@ -49,7 +49,7 @@ $conn->close();
     <meta charset='utf-8' />
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="gerenciador.css">
     <script>
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -130,11 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
         <div id='calendar'></div>
       </div>
     </div>
-<<<<<<< HEAD
-    <form action="update_delete/consultar.php" method="post">
-            <button type="submit" id="logoutButton">Lista de tarefas</button>
-=======
-    
->>>>>>> 2836512207a1a12e723f041f6ddc8879e851940e
+
   </body>
   </html>
