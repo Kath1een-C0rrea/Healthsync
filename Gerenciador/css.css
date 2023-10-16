@@ -85,7 +85,7 @@ body {
         margin-bottom: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
-        background-color: #000;
+        background-color: #000000;
         color: #fff;
     }
     
@@ -94,21 +94,21 @@ body {
     }
     
     .criartarefa button {
-    background-color:rgb(255, 255, 136);
-    color: black;
-    border: #000;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: 0.3s ease;
-    position: relative;
-    top: 10%;
-}
-
-.criartarefa button:hover {
-    background-color: #0056b3;
-
-}
+      background-color: pink; /* You can use a recognized color name */
+      color: black;
+      border: 1px solid #000; /* Use 'solid' for a clear border */
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      position: relative;
+      top: 10%;
+  }
+  
+  .criartarefa button:hover {
+      background-color: rgb(211, 172, 177); /* A lighter shade of pink on hover */
+  }
+  
       /* Estilos para o calendário */
       #calendar {
         margin: 20px;
@@ -116,19 +116,41 @@ body {
 
     /* Estilos para o botão de logout */
     #logoutButton {
-        background-color: #ff0000; /* Cor de fundo vermelha */
+        background-color: #f31f0b; /* Cor de fundo vermelha */
         color: #ffffff; /* Cor do texto branca */
         border: none; /* Remover a borda */
         padding: 10px 20px; /* Espaçamento interno */
         cursor: pointer; /* Mostrar o cursor como uma mão ao passar por cima */
         font-size: 16px; /* Tamanho da fonte */
         border-radius: 5px; /* Arredondar as bordas */
+        left: 230px;
     }
+
+    #listarButton {
+      background-color: #45784c;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px; /* Ajustei o espaçamento interno */
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      position: absolute; /* Mudei para 'absolute' para fixar em relação ao documento */
+      left: 240px; /* Ajustei a posição esquerda */
+      bottom: 100px; /* Alterei para posicionar a partir do fundo */
+  }
+  
+    
+    
 
     /* Estilos para hover (quando o cursor passa por cima) */
     #logoutButton:hover {
         background-color: #cc0000; /* Cor de fundo vermelha mais escura */
     }
+
+
+    #listarButton:hover {
+      background-color: #2a482c; /* Cor de fundo vermelha mais escura */
+  }
 
     #popup {
       display: none;
@@ -152,3 +174,4 @@ body {
     position: relative;
     top: 10%;
     }
+    
