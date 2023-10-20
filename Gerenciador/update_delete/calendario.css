@@ -28,6 +28,7 @@ table {
     border-collapse: collapse;
     margin: 20px 0;
     background-color: #fff;
+
 }
 
 th, td {
@@ -86,11 +87,20 @@ input[type="submit"]:hover {
 }
 
 #logoutButton {
-    background-color: #128724; /* Cor de fundo vermelha */
-    color: #ffffff; /* Cor do texto branca */
+    background-color: #d80a0a; /* Cor de fundo vermelha */
+    color: #f0f0f0; /* Cor do texto branca */
     border: none; /* Remover a borda */
     padding: 10px 20px; /* Espaçamento interno */
     cursor: pointer; /* Mostrar o cursor como uma mão ao passar por cima */
     font-size: 16px; /* Tamanho da fonte */
     border-radius: 5px; /* Arredondar as bordas */
+    position: absolute;
+    top: 90%;
+    left: 3%;
 }
+
+.logout {
+    color: #f0f0f0;
+    
+}
+

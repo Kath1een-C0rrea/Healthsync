@@ -12,9 +12,10 @@
     $datafinal = $_POST['datafim'];
     $selectcor = $_POST['selectcor'];
     $tarefadescricao = $_POST['descricao'];
+    $tarefasetor = $_POST['Setor'];
 
-    $stmt = $conn->prepare("INSERT INTO tarefas (title, start, end, color, description) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssss", $nometarefa, $datainicio, $datafinal, $selectcor, $tarefadescricao);
+    $stmt = $conn->prepare("INSERT INTO tarefas (title, start, end, color, description, setor_tarefa) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssss", $nometarefa, $datainicio, $datafinal, $selectcor, $tarefadescricao, $tarefasetor);
 
 if ($stmt->execute()) {
     echo "Dados inseridos com sucesso!";

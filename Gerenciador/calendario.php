@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'Data Fim: ' + info.event.end +
             'Descrição: ' + info.event.extendedProps.description
             
+            
           )
         },
             events: <?php echo $resultJSON; ?>, // Carrega os eventos do JSON gerado no PHP
@@ -109,7 +110,9 @@ document.addEventListener('DOMContentLoaded', function() {
             <option value="red">vermelho</option>
           </select> <br> <br>
 
-          <input type="text"  id="eventTitle" name="descricao" placeholder="descrição">
+          <input type="text"  id="eventTitle" name="descricao" placeholder="descrição"> <br>
+
+          <input type="text"  id="eventTitle" name="Setor" placeholder="Setor encarregado" required> <br>
 
           <div class="button">
             <br>
@@ -130,6 +133,8 @@ document.addEventListener('DOMContentLoaded', function() {
         <div id='calendar'></div>
       </div>
     </div>
+
+
 
   </body>
   </html>
