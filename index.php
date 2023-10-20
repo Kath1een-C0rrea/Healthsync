@@ -29,7 +29,7 @@ include "conexao.php";
             <input type="email" name="email" placeholder="E-mail">
             <input type="password" name="senha" placeholder="Senha">
             <button type="submit">Enviar</button>
-                <a class="esqueceu" href="REDEFINIR SENHA\index.php">Esqueceu a senha?</a>
+                <a class="esqueceu" href="REDEFINIR_SENHA\redefinir.php">Esqueceu a senha?</a>
 </form>
 
         
