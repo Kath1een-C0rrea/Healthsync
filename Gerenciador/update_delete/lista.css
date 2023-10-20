@@ -1,0 +1,72 @@
+/* lista.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+table {
+    width: 80%; /* Definindo a largura da tabela para 80% da largura da tela */
+    margin: 20px auto; /* Centralizando a tabela horizontalmente e adicionando margem superior */
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 8px 12px; /* Adicionando preenchimento às colunas */
+    text-align: center; /* Centralizando o conteúdo nas colunas */
+}
+
+th {
+    background-color: #0d4b1a;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #2c7a3d;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#logoutButton {
+    background-color: #7EB89C;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#logoutButton a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#logoutButton:hover {
+    background-color: #7EB89C;
+}

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Listar Dados</title>
-    <link rel="stylesheet" href="calendario.css">
+    <link rel="stylesheet" href="lista.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
@@ -65,7 +65,7 @@
 <body> 
 
             
-            <button type="submit" id="logoutButton" ><a class="logout" href="http://localhost/Healthsync/Gerenciador/calendario.php">Voltar para o calendario</a></button>
+            <button type="submit" id="logoutButton" ><a class="logout" href="http://localhost/Healthsync/Gerenciador/calendario.php">Voltar para o calendário</a></button>
 
 </body>
 </html>
