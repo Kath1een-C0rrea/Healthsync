@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div id="logo">
         <form action="logout.php" method="post">
             <button type="submit" id="logoutButton">Logout</button>
-
+                        
         </form>
           <img class="logo" src="imagens/HealthSync-removebg-preview.png" alt="logo">
       </div>
@@ -96,21 +96,21 @@ document.addEventListener('DOMContentLoaded', function() {
     <form action="inserir.php" method="post">
           <h2>Criar Tarefa</h2>
             <label for="taskTitle">Título da Tarefa:</label>
-
-            <input type="text"  id="eventTitle" name="nometarefa" required>
+            <input type="text"  id="eventTitle" name="nometarefa" placeholder="Nome do evento" required>
 
           <input type="datetime-local" id="eventstart" name="datainicio" required>
 
           <input type="datetime-local"  id="eventEnd" name="datafim" required>
 
+          <p>Urgência da Tarefa</p>
           <select name="selectcor" required>
-            <option value="blue" selected>azul</option>
-            <option value="green">verde</option>
-            <option value="yellow">amarelo</option>
-            <option value="red">vermelho</option>
+            <option value="blue" selected>Azul - Baixa</option>
+            <option value="green">verde - Razoável</option>
+            <option value="yellow">Amarelo - Média</option>
+            <option value="red">Vermelho - Alta</option>
           </select> <br> <br>
 
-          <input type="text"  id="eventTitle" name="descricao" placeholder="descrição"> <br>
+          <input type="text"  id="eventTitle" name="descricao" placeholder="Descrição"> <br>
 
           <input type="text"  id="eventTitle" name="Setor" placeholder="Setor encarregado" required> <br>
 

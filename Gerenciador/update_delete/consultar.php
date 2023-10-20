@@ -65,7 +65,7 @@
 <body> 
 
             
-            <button type="submit" id="logoutButton" ><a class="logout" href="http://localhost/Healthsync/Gerenciador/calendario.php">Voltar para o calendario</a></button>
+            <button type="submit" id="logoutButton" ><a class="logout" href="http://localhost/healthsync/Healthsync/Gerenciador/calendario.php">Voltar para o calendario</a></button>
 
 </body>
 </html>
