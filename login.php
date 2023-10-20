@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if(password_verify($senha, $senha_db)){
             $_SESSION['username'] = $linha['funcionario_nome'];
+            $_SESSION['funcionario_id'] = $linha['funcionario_id'];
             $_SESSION['autenticado'] = true;
             header("Location: ./Gerenciador/calendario.php");
         }

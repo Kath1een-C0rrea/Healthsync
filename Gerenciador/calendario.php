@@ -1,10 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "db_healthsync");
-
-// Verifica se a conexão foi bem-sucedida
-if ($conn->connect_error) {
-    die("Erro de conexão: " . $conn->connect_error);
-}
+include '../Gerenciador/conexao.php';
 
 session_start();
 
@@ -13,7 +8,17 @@ if ($_SESSION['autenticado'] !== true) {
     // Você pode redirecionar o usuário para a página de login ou fazer outra coisa, dependendo dos requisitos do seu sistema.
     exit;
 }
+$funcionario_id = $_SESSION['funcionario_id']; // Substitua 'funcionario_id' pelo nome da coluna que contém o ID do funcionário na sua tabela
+$funcionario = "SELECT * FROM funcionario WHERE funcionario_id ='$funcionario_id'";
 
+$resultFuncionario = $conn->query($funcionario);
+
+if ($resultFuncionario->num_rows > 0) {
+    $rowFuncionario = $resultFuncionario->fetch_assoc();
+    $funcionario_nome = $rowFuncionario['nome'];
+} else {
+    $nomeFuncionario = "Funcionário não encontrado";
+}
 // Consulta SQL para selecionar todas as colunas da tabela 'tarefas'
 $sql = "SELECT * FROM tarefas";
 
@@ -38,7 +43,6 @@ if ($result) {
 } else {
     echo "Erro na consulta: " . $conn->error;
 }
-
 // Fecha a conexão com o banco de dados
 $conn->close();
 ?>
@@ -87,33 +91,37 @@ document.addEventListener('DOMContentLoaded', function() {
         <div id="logo">
         <form action="logout.php" method="post">
             <button type="submit" id="logoutButton">Logout</button>
-                        
+
         </form>
           <img class="logo" src="imagens/HealthSync-removebg-preview.png" alt="logo">
       </div>
+      <div class="funcionario-nome">
+        <p>Funcionário: <?php echo $_SESSION['username']; ?></p>
+    </div>
         <!-- Conteúdo da barra lateral (criação de tarefa) -->
         <div class="criartarefa">
     <form action="inserir.php" method="post">
           <h2>Criar Tarefa</h2>
             <label for="taskTitle">Título da Tarefa:</label>
+
             <input type="text"  id="eventTitle" name="nometarefa" placeholder="Nome do evento" required>
 
           <input type="datetime-local" id="eventstart" name="datainicio" required>
 
           <input type="datetime-local"  id="eventEnd" name="datafim" required>
-
-          <p>Urgência da Tarefa</p>
+          <p> Urgência da Tarefa </p>
           <select name="selectcor" required>
             <option value="blue" selected>Azul - Baixa</option>
-            <option value="green">verde - Razoável</option>
+            <option value="green">Verde - Razoável</option>
             <option value="yellow">Amarelo - Média</option>
             <option value="red">Vermelho - Alta</option>
           </select> <br> <br>
 
+         <!-- //teste  -->
+
           <input type="text"  id="eventTitle" name="descricao" placeholder="Descrição"> <br>
 
           <input type="text"  id="eventTitle" name="Setor" placeholder="Setor encarregado" required> <br>
-
           <div class="button">
             <br>
             <button type="submit">Adicionar Tarefa</button>
