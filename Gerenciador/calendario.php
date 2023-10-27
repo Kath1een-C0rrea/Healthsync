@@ -15,7 +15,7 @@ $resultFuncionario = $conn->query($funcionario);
 
 if ($resultFuncionario->num_rows > 0) {
     $rowFuncionario = $resultFuncionario->fetch_assoc();
-    $funcionario_nome = $rowFuncionario['nome'];
+    $funcionario_nome = $rowFuncionario['funcionario_nome'];
 } else {
     $nomeFuncionario = "Funcionário não encontrado";
 }
