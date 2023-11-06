@@ -64,9 +64,10 @@ document.addEventListener('DOMContentLoaded', function() {
         eventClick: function(info) {
           Swal.fire(
             'Tarefa: ' + info.event.title,
-            'Data Início: ' + info.event.start +
-            'Data Fim: ' + info.event.end +
-            'Descrição: ' + info.event.extendedProps.description
+            ' Data Início: ' + info.event.start + 
+            ' Data Fim: ' + info.event.end +
+            ' Descrição: ' + info.event.extendedProps.description +
+            ' Setor encarregado: ' +info.event.extendedProps.setor_tarefa
             
             
           )

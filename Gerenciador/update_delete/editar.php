@@ -42,8 +42,11 @@
     <input type="text"  name="end" value="<?php echo $tarefa ['end']; ?>" required>
 
     <label for="nome">Descrição:</label>
-    <input type="text" name="description" value="<?php echo $tarefa ['description']?>" required>
+    <input type="text" name="description" value="<?php echo $tarefa ['description']; ?>" required>
     
+    <label for="nome">Setor encarregado:</label>
+    <input type="text" name="setor_tarefa" value="<?php echo $tarefa ['setor_tarefa']; ?>" required> 
+
     <label for="urgencia">Urgência:</label>
             <select name="color" required>
                 <option value="blue">azul</option>
