@@ -1,5 +1,3 @@
-/* lista.css */
-
 * {
     margin: 0;
     padding: 0;
@@ -17,8 +15,8 @@ body {
 }
 
 table {
-    width: 80%; /* Definindo a largura da tabela para 80% da largura da tela */
-    margin: 20px auto; /* Centralizando a tabela horizontalmente e adicionando margem superior */
+    width: 80%; 
+    margin: 20px auto; 
 }
 
 table, th, td {
@@ -26,8 +24,8 @@ table, th, td {
 }
 
 th, td {
-    padding: 8px 12px; /* Adicionando preenchimento às colunas */
-    text-align: center; /* Centralizando o conteúdo nas colunas */
+    padding: 8px 12px; 
+    text-align: center; 
 }
 
 th {
@@ -53,7 +51,7 @@ a:hover {
 }
 
 #logoutButton {
-    background-color: #7EB89C;
+    background-color: #5c8973;
     color: #fff;
     border: none;
     border-radius: 3px;
@@ -68,5 +66,5 @@ a:hover {
 }
 
 #logoutButton:hover {
-    background-color: #7EB89C;
+    background-color: #399669;
 }

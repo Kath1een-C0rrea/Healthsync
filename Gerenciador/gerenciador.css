@@ -60,7 +60,7 @@ body {
     .criartarefa{
       text-align: center;
       position: relative;
-      top: 10%;
+      top: 4%; /* Ou um valor adequado para a movimentação desejada */
       right: 10%;
       background-color: rgb(97, 86, 106);
       border-radius: 10px;
@@ -134,13 +134,9 @@ body {
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
-    position: fixed;
-    right: 5%;
-    bottom: 80px; /* Alterei para posicionar a partir do fundo */
+    position: relative;
+    left: 18%;
 }
-
-  
-  
 
   /* Estilos para hover (quando o cursor passa por cima) */
   #logoutButton:hover {
@@ -174,3 +170,17 @@ body {
   position: relative;
   top: 10%;
   }
+  .funcionario-nome {
+    background-color: rgb(112, 160, 136);
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 5px; /* Borda arredondada */
+    margin-bottom: 10px; /* Margem inferior */
+    max-width: 200px; /* Largura máxima desejada */
+    margin-top: 20px; /* Margem superior para posicionar mais para baixo */
+  }
+  
+  .funcionario-nome p {
+    font-size: 16px;
+    color: #333;
+  }
+  

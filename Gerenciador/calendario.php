@@ -85,31 +85,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     </script>
 
-  </head>
-  <body>
-    <div id='app'>
-      <div id='sidebar'>
-        <div id="logo">
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+  <div id='app'>
+    <div id='sidebar'>
+      <div id="logo">
         <form action="logout.php" method="post">
-            <button type="submit" id="logoutButton">Logout</button>
-
+          <button type="submit" id="logoutButton">Logout</button>
         </form>
-          <img class="logo" src="imagens/HealthSync-removebg-preview.png" alt="logo">
+        <img class="logo" src="imagens/HealthSync-removebg-preview.png" alt="logo">
       </div>
-      <div class="funcionario-nome">
-        <p>Funcionário: <?php echo $_SESSION['username']; ?></p>
+      <div id='listar-container'>
+      <form action="update_delete/consultar.php" method="post">
+        <button type="submit" id="listarButton">Listar</button>
+      </form>
     </div>
-        <!-- Conteúdo da barra lateral (criação de tarefa) -->
-        <div class="criartarefa">
-    <form action="inserir.php" method="post">
+
+    <div class="funcionario-nome">
+        <p>Funcionário: <?php echo $_SESSION['username']; ?></p>
+      </div>
+
+      <div class="criartarefa">
+        <form action="inserir.php" method="post">
           <h2>Criar Tarefa</h2>
-            <label for="taskTitle">Título da Tarefa:</label>
-
-            <input type="text"  id="eventTitle" name="nometarefa" placeholder="Nome do evento" required>
-
+         
+          <label for="taskTitle">Título da Tarefa:</label>
+          <input type="text" id="eventTitle" name="nometarefa" placeholder="Nome do evento" required>
           <input type="datetime-local" id="eventstart" name="datainicio" required>
-
-          <input type="datetime-local"  id="eventEnd" name="datafim" required>
+          <input type="datetime-local" id="eventEnd" name="datafim" required>
           <p> Urgência da Tarefa </p>
           <select name="selectcor" required>
             <option value="blue" selected>Azul - Baixa</option>
@@ -117,33 +124,20 @@ document.addEventListener('DOMContentLoaded', function() {
             <option value="yellow">Amarelo - Média</option>
             <option value="red">Vermelho - Alta</option>
           </select> <br> <br>
-
-         <!-- //teste  -->
-
-          <input type="text"  id="eventTitle" name="descricao" placeholder="Descrição"> <br>
-
-          <input type="text"  id="eventTitle" name="Setor" placeholder="Setor encarregado" required> <br>
+          <input type="text" id="eventTitle" name="descricao" placeholder="Descrição"> <br>
+          <input type="text" id="eventTitle" name="Setor" placeholder="Setor encarregado" required> <br>
           <div class="button">
             <br>
             <button type="submit">Adicionar Tarefa</button>
             <br>
-
-    </form>
           </div>
-        </div>  
-      </div>
-
-      <div id='listar-container'>
-    <form action="update_delete/consultar.php" method="post">
-            <button type="submit" id="listarButton">Lista de Tarefas</button>
-    </div>
-        
-      <div id='calendar-container'>
-        <div id='calendar'></div>
+        </form>
       </div>
     </div>
-
-
-
-  </body>
-  </html>
+   
+    <div id='calendar-container'>
+      <div id='calendar'></div>
+    </div>
+  </div>
+</body>
+</html>
