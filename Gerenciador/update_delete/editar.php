@@ -57,6 +57,7 @@
             </select>
 
             <button type="submit">Atualizar</button>
+            <a href="http://localhost/Healthsync/Healthsync/Gerenciador/calendario.php"><button type="button">Voltar</button></a>
 </form>
 
 
